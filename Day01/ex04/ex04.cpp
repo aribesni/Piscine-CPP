@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:31:24 by aribesni          #+#    #+#             */
-/*   Updated: 2022/02/09 10:31:25 by aribesni         ###   ########.fr       */
+/*   Created: 2022/02/23 16:27:48 by aribesni          #+#    #+#             */
+/*   Updated: 2022/02/23 16:27:50 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
+#include <iostream>
 
-# include <iostream>
+int main (void) {
 
-class Pony {
+    std::string str = "HI THIS IS BRAIN";
+    std::string *ptr = &str;
+    std::string &ref = str;
 
-    public :
-
-        Pony(void);
-        ~Pony(void);
-        void initPony(void);
-    
-    private :
-
-        int ears;
-        int eyes;
-        int legs;
-        int tail;
-};
-
-#endif
+    std::cout << "ptr : " << *ptr << std::endl;
+    std::cout << "ref : " << ref << std::endl;
+    return (0);
+}

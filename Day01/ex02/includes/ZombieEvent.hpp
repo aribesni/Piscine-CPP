@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:31:24 by aribesni          #+#    #+#             */
-/*   Updated: 2022/02/09 10:31:25 by aribesni         ###   ########.fr       */
+/*   Created: 2022/02/11 14:52:37 by aribesni          #+#    #+#             */
+/*   Updated: 2022/02/11 14:52:39 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
+#ifndef ZOMBIEEVENT_H
+# define ZOMBIEEVENT_H
 
 # include <iostream>
+# include "Zombie.hpp"
 
-class Pony {
+class ZombieEvent {
 
     public :
 
-        Pony(void);
-        ~Pony(void);
-        void initPony(void);
-    
-    private :
+        std::string name;
+        std::string setZombieType;
 
-        int ears;
-        int eyes;
-        int legs;
-        int tail;
+        ZombieEvent(std::string type);
+        ~ZombieEvent(void);
+
+        Zombie* newZombie(std::string name);
+
 };
 
 #endif
