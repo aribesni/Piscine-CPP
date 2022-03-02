@@ -1,0 +1,7 @@
+Le moteur à combustion et explosion désigne tout type de moteur à combustion interne à pistons alternatifs ou rotatifs, Diesel, semi-Diesel ou à allumage commandé dans lesquels les gaz brûlent avec un front de flamme dont la vitesse est, normalement, inférieure à celle du son.
+
+Le premier moteur à combustion à un cylindre a été réalisé par Eugenio Barsanti et Felice Matteucci en 1854.
+
+Le moteur à combustion à deux temps est réalisé par Étienne Lenoir en 1859. Le moteur à combustion à quatre temps est inventé par Beau de Rochas en 1862, développé par Nikolaus Otto en 1867, puis perfectionné par Gottlieb Daimler et Wilhelm Maybach en 1886, suivi par le Moteur à boule chaude en 1891 puis le moteur Diesel en 1893.
+
+Ce type de moteur est principalement utilisé pour la propulsion des véhicules de transport (tels qu'avions, automobiles, motos, camions et bateaux), pour de nombreux outils mobiles (tels que tronçonneuses et tondeuses à gazon) et pour de nombreuses installations fixes (groupes électrogènes, pompes, etc.).
