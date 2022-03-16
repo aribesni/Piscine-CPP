@@ -5,27 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/02 11:56:39 by aribesni          #+#    #+#              #
-#    Updated: 2022/03/16 10:32:43 by aribesni         ###   ########.fr        #
+#    Created: 2022/03/09 15:38:12 by aribesni          #+#    #+#              #
+#    Updated: 2022/03/09 15:38:12 by aribesni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		fixed
+NAME = 		scavtrap
 
-SRC = 		Fixed.cpp main.cpp
+SRC = 		FragTrap.cpp ScavTrap.cpp main.cpp
 
-SRCS = 		${addprefix ./srcs/, ${SRC}}
+SRCS = 		${addprefix ./srcs/, ${SRC}} 
 
 OBJ = 		${SRCS:.cpp=.o}
 
 CC = 		clang++
 
-HEADER = 	./includes/
-
 FLAGS = 	-Wall -Wextra -Werror
 
-%.o : 		%.cpp ./includes/Fixed.hpp
-			${CC} ${FLAG} -I ${HEADER} -c $< -o $@
+HEADER = 	./includes/
+
+%.o : 		%.cpp ./includes/FragTrap.hpp ./includes/ScavTrap.hpp
+			${CC} ${FLAGS} -I ${HEADER} -c $< -o $@
 
 all : 		${NAME}
 
@@ -40,4 +40,4 @@ fclean : 	clean
 
 re : 		fclean all
 
-.PHONY : 	all clean fclean re
+.PHONY :	all clean fclean re 

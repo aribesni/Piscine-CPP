@@ -6,7 +6,7 @@
 #    By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 11:56:39 by aribesni          #+#    #+#              #
-#    Updated: 2022/03/03 10:13:14 by aribesni         ###   ########.fr        #
+#    Updated: 2022/03/16 10:32:28 by aribesni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ clean :
 fclean : 	clean
 			rm -f ${NAME}
 
-re : 		fclean
-			all
+re : 		fclean all
 
 .PHONY : 	all clean fclean re

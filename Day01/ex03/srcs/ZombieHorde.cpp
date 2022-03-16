@@ -6,7 +6,7 @@
 /*   By: aribesni <aribesni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:46:13 by aribesni          #+#    #+#             */
-/*   Updated: 2022/02/11 14:46:14 by aribesni         ###   ########.fr       */
+/*   Updated: 2022/03/15 13:50:09 by aribesni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ZombieHorde::ZombieHorde(int n) : nb(n) {
     {
         sleep(1);
         srand(time(0));
-        i = (rand() % 12);
+        i = (rand() % 13);
         std::string name[13] = {"Lebron", "Kobe", "Michael", "Larry", "Wilt", "Earvin",
             "Allen", "Giannis", "Dikembe", "Karim", "Hakeem", "Kawhi", "Kyrie"};
         std::cout << std::endl << "\033[1m\033[35m" << "Generating random zombie ..." << "\033[0m" << std::endl << std::endl;

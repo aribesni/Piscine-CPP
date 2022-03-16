@@ -14,11 +14,6 @@
 # define FIXED_H
 
 # include <iostream>
-# include <cstdio>
-# include <iomanip>
-# include <string.h>
-# include <ctime>
-# include <bitset>
 # include <cmath>
 
 class Fixed {
