@@ -22,9 +22,12 @@ class   ShrubberyCreationForm : public Form {
     public :
 
         ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(ShrubberyCreationForm const &src);
         ~ShrubberyCreationForm(void);
         
         virtual void    execute(Bureaucrat const &executor) const;
+    
+        ShrubberyCreationForm   &operator=(ShrubberyCreationForm const &rhs);
     
     private :
 

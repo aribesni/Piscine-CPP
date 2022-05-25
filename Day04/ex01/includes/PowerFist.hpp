@@ -21,9 +21,12 @@ class   PowerFist : public AWeapon {
     public :
 
         PowerFist(void);
+        PowerFist(PowerFist const &src);
         ~PowerFist(void);
 
         virtual void    attack(void) const;
+
+        PowerFist   &operator=(PowerFist const &rhs);
 };
 
 #endif

@@ -20,12 +20,15 @@ class   Victim {
     public :
 
         Victim(std::string get_name);
+        Victim(Victim const &src);
         ~Victim(void);
 
         std::string name;
 
         std::string getName(void) const;
         virtual void        getPolymorphed(void) const;
+
+        Victim  &operator=(Victim const &rhs);
 
 };
 

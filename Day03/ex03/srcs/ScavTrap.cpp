@@ -18,6 +18,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 100, 50, 50, 1, 20, 1
     return ;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src) {
+
+    std::cout << "Copy constructor called" << std::endl;
+    return ;
+}
+
 ScavTrap::~ScavTrap(void) {
 
     std::cout << "ScavTrap Destructor called" << std::endl;
@@ -33,4 +39,10 @@ void    ScavTrap::challengeNewcomer(void) {
     i = rand() % 5;
     std::cout << "New challenge for SC4V-TP : " << challenge[i] << std::endl;
     return ;
+}
+
+ScavTrap&   ScavTrap::operator=(ScavTrap const &rhs) {
+
+    (void)rhs;
+    return (*this);
 }

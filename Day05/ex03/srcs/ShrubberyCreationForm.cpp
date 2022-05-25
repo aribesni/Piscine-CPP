@@ -18,6 +18,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
     return ;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) : Form(src.getName(), src.getToSign(), src.getToExec()) {
+
+    this->_target = src._target;
+    return ;
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
     // std::cout << "ShrubberyCreationForm destructor called" << std::endl;
@@ -30,4 +36,10 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     std::ofstream   ofs(this->_target + "_shrubbery");
     ofs << "This is a tree in ascii" << std::endl;
     return ;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
+
+    this->_target = rhs._target;
+    return (*this);
 }

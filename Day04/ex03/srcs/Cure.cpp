@@ -18,6 +18,11 @@ Cure::Cure(void) : AMateria("cure") {
     return ;
 }
 
+Cure::Cure(Cure const &src) : AMateria(src) {
+
+    return ;
+}
+
 Cure::~Cure(void) {
 
     // std::cout << "Cure destructor called" << std::endl;

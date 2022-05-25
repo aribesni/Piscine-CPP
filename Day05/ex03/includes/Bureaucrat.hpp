@@ -23,6 +23,7 @@ class   Bureaucrat {
     public :
 
         Bureaucrat(std::string name, int grade);
+        Bureaucrat(Bureaucrat const &src);
         ~Bureaucrat(void);
 
         std::string getName(void) const;
@@ -45,6 +46,8 @@ class   Bureaucrat {
             public :
                 virtual const char *what() const throw() { return ("Grade too low"); };
         };
+        
+        Bureaucrat  &operator=(Bureaucrat const &rhs);
 
     private :
 

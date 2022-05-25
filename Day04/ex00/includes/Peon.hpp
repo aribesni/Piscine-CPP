@@ -21,10 +21,13 @@ class   Peon : public Victim {
     public :
 
         Peon(std::string get_name);
+        Peon(Peon const &src);
         ~Peon(void);
 
         std::string     name;
         virtual void    getPolymorphed(void) const;
+
+        Peon    &operator=(Peon const &rhs);
 
 };
 

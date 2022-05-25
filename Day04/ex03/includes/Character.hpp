@@ -21,6 +21,7 @@ class   Character : public ICharacter {
     public :
         
         Character(std::string name);
+        Character(Character const &src);
         virtual ~Character(void);
 
         virtual std::string const   &getName(void) const;

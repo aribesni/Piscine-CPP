@@ -26,6 +26,20 @@ Character::Character(std::string name) : _name(name) {
     return ;
 }
 
+Character::Character(Character const &src) {
+
+    int i;
+
+    i = 0;
+    while (i < 4)
+    {
+        this->_m[i] = NULL;
+        i++;
+    }
+    this->_name = src.getName();
+    return ;
+}
+
 Character::~Character(void) {
 
     // std::cout << "Character destructor called" << std::endl;

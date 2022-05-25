@@ -23,12 +23,15 @@ class   ClapTrap {
         unsigned int energy_points, unsigned int max_energy_points, unsigned int level,
         unsigned int melee_attack_damage, unsigned int ranged_attack_damage,
         unsigned int armor_damage_reduction);
+        ClapTrap(ClapTrap const &src);
         ~ClapTrap(void);
 
         void    rangedAttack(std::string const &target);
         void    meleeAttack(std::string const &target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
+
+        ClapTrap    &operator=(ClapTrap const &rhs);
 
     protected :
 

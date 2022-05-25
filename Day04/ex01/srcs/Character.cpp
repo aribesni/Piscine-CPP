@@ -18,6 +18,13 @@ Character::Character(std::string const &name) : ap(40), _name(name) {
     return ;
 }
 
+Character::Character(Character const &src) {
+
+    this->ap = 40;
+    this->_name = src.getName();
+    return ;
+}
+
 Character::~Character(void) {
 
     // std::cout << "Character destructor called" << std::endl;
@@ -66,4 +73,11 @@ std::ostream    &operator<<(std::ostream &o, Character const &rhs) {
     else
         o << rhs.getName() << " has " << rhs.ap << " AP and is unarmed" << std::endl;
     return (o);
+}
+
+Character&  Character::operator=(Character const &rhs) {
+
+    this->ap = rhs.ap;
+    this->_name = rhs.getName();
+    return (*this);
 }

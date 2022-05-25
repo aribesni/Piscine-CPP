@@ -19,23 +19,106 @@
 
 int main(void)
 {
-	Intern  chad;
-    Form    *rr;
-    Form    *pp;
-    Form    *sc;
-    Form    *xx;
+	Bureaucrat* bob = new Bureaucrat("bob", 150);
+	Bureaucrat* jimmy = new Bureaucrat("jimmy", 1);
+	PresidentialPardonForm* form;
+	ShrubberyCreationForm* shrubForm = new ShrubberyCreationForm("forest");
+	RobotomyRequestForm* roboform = new RobotomyRequestForm("Bill Potts");
 
-    rr = chad.makeForm("robotomy request", "bobby");
-    pp = chad.makeForm("presidential pardon", "billy");
-    sc = chad.makeForm("shrubbery creation", "dylan");
-    xx = chad.makeForm("xxxxxx", "xxxx");
+	try
+	{
+		form = new PresidentialPardonForm("Daphne");
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception " << e.what() << std::endl;
+	}
+	std::cout << *form << std::endl;
+	std::cout << *shrubForm << std::endl;
+	std::cout << *roboform << std::endl;
+	std::cout << *bob << std::endl;
+	std::cout << *jimmy << std::endl;
 
-    Bureaucrat  doug("doug", 18);
+	try
+	{
+		bob->gradeUp();
+		jimmy->gradeDown();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception " << e.what() << std::endl;
+	}
+	std::cout << *bob << std::endl;
+	std::cout << *jimmy << std::endl;
 
-    doug.signForm(rr);
-    doug.signForm(pp);
-    doug.signForm(sc);
-    if (xx)
-        doug.signForm(xx);
+	try
+	{
+		jimmy->gradeUp();
+		bob->gradeUp();
+		bob->gradeUp();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception " << e.what() << std::endl;
+	}
+	std::cout << *bob << std::endl;
+	std::cout << *jimmy << std::endl;
+	bob->signForm(form);
+	jimmy->signForm(form);
+	std::cout << *form << std::endl;
+
+	bob->executeForm(*form);
+	jimmy->executeForm(*form);
+
+
+	bob->executeForm(*roboform);
+	jimmy->executeForm(*roboform);
+
+	bob->signForm(roboform);
+	jimmy->signForm(roboform);
+
+	bob->executeForm(*shrubForm);
+	bob->signForm(shrubForm);
+	jimmy->signForm(shrubForm);
+
+	try
+	{
+		int j = 0;
+		while (j++ < 20)
+			bob->gradeDown();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception " << e.what() << std::endl;
+	}
+
+	bob->executeForm(*shrubForm);
+
+	bob->executeForm(*roboform);
+	jimmy->executeForm(*roboform);
+	jimmy->executeForm(*roboform);
+	jimmy->executeForm(*roboform);
+	jimmy->executeForm(*roboform);
+
+
+	std::cout << "\n-------Last-Part--------\n" << std::endl;
+
+	Intern* nameless = new Intern;
+
+	Form* creation;
+	creation = nameless->makeForm("blue", "black");
+	creation = nameless->makeForm("robotomy request", "red");
+	std::cout << *creation << std::endl;
+	jimmy->executeForm(*creation);
+	jimmy->signForm(creation);
+	jimmy->executeForm(*creation);
+
+	delete (bob);
+	delete (jimmy);
+	delete (form);
+	delete (roboform);
+	delete (shrubForm);
+	delete (creation);
+	delete (nameless);
 	return (0);
 }

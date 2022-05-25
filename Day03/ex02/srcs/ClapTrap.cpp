@@ -25,6 +25,15 @@ ClapTrap::ClapTrap(std::string name, unsigned int hit_points, unsigned int max_h
     return ;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &src) : _name(src._name), _hit_points(src._hit_points),
+    _max_hit_points(src._max_hit_points), _energy_points(src._energy_points), _max_energy_points(src._max_energy_points),
+    _level(src._level), _melee_attack_damage(src._melee_attack_damage), _ranged_attack_damage(src._ranged_attack_damage),
+    _armor_damage_reduction(src._armor_damage_reduction) {
+
+    std::cout << "Copy constructor called" << std::endl;
+    return ;
+}
+
 ClapTrap::~ClapTrap(void) {
 
     std::cout << "ClapTrap destructor called" << std::endl;
@@ -106,4 +115,18 @@ void    ClapTrap::beRepaired(unsigned int amount) {
         std::cout << this->_energy_points << " energy points left" << std::endl;
     }
     return ;
+}
+
+ClapTrap&   ClapTrap::operator=(ClapTrap const &rhs) {
+
+    this->_name = rhs._name;
+    this->_hit_points = rhs._hit_points;
+    this->_max_hit_points = rhs._max_hit_points;
+    this->_energy_points = rhs._energy_points;
+    this->_max_energy_points = rhs._max_energy_points;
+    this->_level = rhs._level;
+    this->_melee_attack_damage = rhs._melee_attack_damage;
+    this->_ranged_attack_damage = rhs._ranged_attack_damage;
+    this->_armor_damage_reduction = rhs._armor_damage_reduction;
+    return (*this);
 }

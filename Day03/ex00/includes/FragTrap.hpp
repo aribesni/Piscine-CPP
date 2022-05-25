@@ -21,23 +21,28 @@ class   FragTrap {
     public :
 
         FragTrap(std::string get_name);
+        FragTrap(FragTrap const &src);
         ~FragTrap(void);
-
-        std::string     name;
-        unsigned int    hit_points;
-        unsigned int    max_hit_points;
-        unsigned int    energy_points;
-        unsigned int    max_energy_points;
-        unsigned int    level;
-        unsigned int    melee_attack_damage;
-        unsigned int    ranged_attack_damage;
-        unsigned int    armor_damage_reduction;
 
         void    rangedAttack(std::string const &target);
         void    meleeAttack(std::string const &target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
         void    vaulthunter_dot_exe(std::string const &target);
+
+        FragTrap    &operator=(FragTrap const &rhs);
+
+        private :
+
+            std::string     name;
+            unsigned int    hit_points;
+            unsigned int    max_hit_points;
+            unsigned int    energy_points;
+            unsigned int    max_energy_points;
+            unsigned int    level;
+            unsigned int    melee_attack_damage;
+            unsigned int    ranged_attack_damage;
+            unsigned int    armor_damage_reduction;
 
 };
 

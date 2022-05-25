@@ -85,3 +85,10 @@ int Span::longestSpan(void) {
 	}
 	return (max);
 }
+
+Span&   Span::operator=(Span const &rhs) {
+
+    this->_array = rhs._array;
+    this->_size = rhs._size;
+    return (*this);
+}

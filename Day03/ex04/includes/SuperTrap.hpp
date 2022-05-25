@@ -22,6 +22,7 @@ class   SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
     public :
 
         SuperTrap(std::string name);
+        SuperTrap(SuperTrap const &src);
         ~SuperTrap(void);
 
         using FragTrap::_hit_points;
@@ -37,6 +38,8 @@ class   SuperTrap : public virtual FragTrap, public virtual NinjaTrap {
 
         void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
+
+        SuperTrap   &operator=(SuperTrap const &rhs);
 
 };
 

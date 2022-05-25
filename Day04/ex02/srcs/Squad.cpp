@@ -21,6 +21,12 @@ Squad::Squad(void) {
     return ;
 }
 
+Squad::Squad(Squad const &src) {
+
+    this->squad = src.squad;
+    return ;
+}
+
 Squad::~Squad(void) {
 
     t_squad *temp;
@@ -90,4 +96,11 @@ int Squad::push(ISpaceMarine *recruit) {
         temp->next->next = NULL;
     }
     return (i);
+}
+
+Squad&  Squad::operator=(Squad const &rhs) {
+
+    if (this != &rhs)
+        this->squad = rhs.squad;
+    return (*this);
 }

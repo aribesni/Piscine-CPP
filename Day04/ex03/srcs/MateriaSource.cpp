@@ -14,7 +14,31 @@
 
 MateriaSource::MateriaSource(void) {
 
+    int i;
+
+    i = 0;
+    while (i < 4)
+    {
+        this->_m[i] = NULL;
+        i++;
+    }
     // std::cout << "MateriaSource constructor called" << std::endl;
+    return ;
+}
+
+MateriaSource::MateriaSource(MateriaSource const &src) {
+
+    int i;
+
+    i = 0;
+    while (i < 4)
+    {
+        if (src._m[i])
+            this->_m[i] = src._m[i];
+        else
+            this->_m[i] = NULL;
+        i++;
+    }
     return ;
 }
 

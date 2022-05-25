@@ -18,8 +18,20 @@ SuperMutant::SuperMutant(void) : Enemy(170, "Super Mutant") {
     return ;
 }
 
+SuperMutant::SuperMutant(SuperMutant const &src) : Enemy(src) {
+
+    return ;
+}
+
 SuperMutant::~SuperMutant(void) {
 
     std::cout << "Aaargh..." << std::endl;
     return ;
+}
+
+SuperMutant&    SuperMutant::operator=(SuperMutant const &rhs) {
+
+    this->_hp = rhs.getHP();
+    this->_type = rhs.getType();
+    return (*this);
 }

@@ -22,7 +22,9 @@ class   Character {
     public :
 
         Character(std::string const &name);
+        Character(Character const &src);
         ~Character(void);
+
         void    recoverAP(void);
         void    equip(AWeapon *w);
         void    attack(Enemy *e);
@@ -31,6 +33,8 @@ class   Character {
         int         ap;
         AWeapon     *weapon;
         Enemy       *enemy;
+
+        Character   &operator=(Character const &rhs);
 
     private :
 

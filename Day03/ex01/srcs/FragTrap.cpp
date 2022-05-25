@@ -20,6 +20,15 @@ FragTrap::FragTrap(std::string get_name) : name(get_name), hit_points(100),
     return ;
 }
 
+FragTrap::FragTrap(FragTrap const &src) : name(src.name), hit_points(src.hit_points),
+    max_hit_points(src.max_hit_points), energy_points(src.energy_points), max_energy_points(src.max_energy_points),
+    level(src.level), melee_attack_damage(src.melee_attack_damage), ranged_attack_damage(src.ranged_attack_damage),
+    armor_damage_reduction(src.armor_damage_reduction) {
+
+    std::cout << "Copy constructor called" << std::endl;
+    return ;
+}
+
 FragTrap::~FragTrap(void) {
 
     std::cout << "FragTrap destructor called" << std::endl;
@@ -123,4 +132,18 @@ void    FragTrap::vaulthunter_dot_exe(std::string const &target) {
         std::cout << this->hit_points << " hit points left" << std::endl;
     }
     return ;
+}
+
+FragTrap&   FragTrap::operator=(FragTrap const &rhs) {
+
+    this->name = rhs.name;
+    this->hit_points = rhs.hit_points;
+    this->max_hit_points = rhs.max_hit_points;
+    this->energy_points = rhs.energy_points;
+    this->max_energy_points = rhs.max_energy_points;
+    this->level = rhs.level;
+    this->melee_attack_damage = rhs.melee_attack_damage;
+    this->ranged_attack_damage = rhs.ranged_attack_damage;
+    this->armor_damage_reduction = rhs.armor_damage_reduction;
+    return (*this);
 }

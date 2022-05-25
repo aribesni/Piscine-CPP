@@ -18,6 +18,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
     return ;
 }
 
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(src.getName(), src.getToSign(), src.getToExec()) {
+
+    this->_target = src._target;
+    return ;
+}
+
 RobotomyRequestForm::~RobotomyRequestForm(void) {
 
     // std::cout << "RobotomyRequestForm destructor called" << std::endl;
@@ -29,4 +35,10 @@ void    RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     Form::execute(executor);
     std::cout << "* trtrtrtrtrtrtrtr *    " << this->_target << " has been robotomised" << std::endl;
     return ;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs) {
+
+    this->_target = rhs._target;
+    return (*this);
 }

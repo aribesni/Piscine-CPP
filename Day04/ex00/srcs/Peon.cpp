@@ -18,6 +18,11 @@ Peon::Peon(std::string get_name) : Victim(get_name), name(get_name) {
     return ;
 }
 
+Peon::Peon(Peon const &src) : Victim(src) {
+
+    return ;
+}
+
 Peon::~Peon(void) {
 
     std::cout << "Bleuark..." << std::endl;
@@ -28,4 +33,10 @@ void    Peon::getPolymorphed(void) const {
 
     std::cout << this->name << " was just polymorphed into a pink pony !" << std::endl;
     return ;
+}
+
+Peon&   Peon::operator=(Peon const &rhs) {
+
+    (void)rhs;
+    return (*this);
 }

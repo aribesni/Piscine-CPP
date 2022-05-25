@@ -18,6 +18,11 @@ Ice::Ice(void) : AMateria("ice") {
     return ;
 }
 
+Ice::Ice(Ice const &src) : AMateria(src) {
+
+    return ;
+}
+
 Ice::~Ice(void) {
 
     // std::cout << "Ice destructor called" << std::endl;

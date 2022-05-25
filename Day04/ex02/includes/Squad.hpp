@@ -28,12 +28,16 @@ class   Squad : public ISquad {
     public :
 
         Squad(void);
+        Squad(Squad const &src);
         virtual ~Squad(void);
+
         virtual int getCount(void) const;
         virtual ISpaceMarine    *getUnit(int nb) const;
         virtual int push(ISpaceMarine *recruit);
 
         t_squad *squad;
+
+        Squad   &operator=(Squad const &rhs);
 };
 
 #endif

@@ -21,6 +21,7 @@ class   Sorcerer {
     public :
 
         Sorcerer(std::string get_name, std::string get_type);
+        Sorcerer(Sorcerer const &src);
         ~Sorcerer(void);
 
         std::string name;
@@ -30,6 +31,8 @@ class   Sorcerer {
         std::string getType(void) const;
 
         void        polymorph(Victim const &vic) const;
+
+        Sorcerer    &operator=(Sorcerer const &rhs);
 
 };
 

@@ -23,6 +23,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
     return ;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const &src) {
+
+    this->_name = src.getName();
+    this->_grade = src.getGrade();
+    return ;
+}
+
 Bureaucrat::~Bureaucrat(void) {
 
     // std::cout << "Bureaucrat destructor called" << std::endl;
@@ -94,6 +101,13 @@ void    Bureaucrat::executeForm(Form const &form) {
     else
         std::cout << this->getName() << " fails to execute " << form.getName() << std::endl;
     return ;
+}
+
+Bureaucrat& Bureaucrat::operator=(Bureaucrat const &rhs) {
+
+    this->_name = rhs.getName();
+    this->_grade = rhs.getGrade();
+    return (*this);
 }
 
 std::ostream&   operator<<(std::ostream &o, Bureaucrat const &rhs) {

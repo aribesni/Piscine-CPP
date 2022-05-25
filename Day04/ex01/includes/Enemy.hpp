@@ -20,13 +20,16 @@ class Enemy {
     public :
 
         Enemy(int hp, std::string const &type);
+        Enemy(Enemy const &src);
         virtual ~Enemy(void);
 
         std::string     getType(void) const;
         int             getHP(void) const;
         virtual void    takeDamage(int i);
 
-    private :
+        Enemy   &operator=(Enemy const &rhs);
+
+    protected :
 
         int         _hp;
         std::string _type;

@@ -29,6 +29,8 @@ class   Span {
         int shortestSpan(void);
         int longestSpan(void);
 
+        Span    &operator=(Span const &rhs);
+
     private :
 
         unsigned int        _size;

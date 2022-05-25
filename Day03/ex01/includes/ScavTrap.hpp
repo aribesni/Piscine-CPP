@@ -20,17 +20,8 @@ class   ScavTrap {
     public :
 
         ScavTrap(std::string get_name);
+        ScavTrap(ScavTrap const &src);
         ~ScavTrap(void);
-
-        std::string     name;
-        unsigned int    hit_points;
-        unsigned int    max_hit_points;
-        unsigned int    energy_points;
-        unsigned int    max_energy_points;
-        unsigned int    level;
-        unsigned int    melee_attack_damage;
-        unsigned int    ranged_attack_damage;
-        unsigned int    armor_damage_reduction;
 
         void    rangedAttack(std::string const &target);
         void    meleeAttack(std::string const &target);
@@ -38,6 +29,19 @@ class   ScavTrap {
         void    beRepaired(unsigned int amount);
         void    challengeNewcomer(void);
 
+        ScavTrap    &operator=(ScavTrap const &rhs);
+
+        private :
+
+            std::string     name;
+            unsigned int    hit_points;
+            unsigned int    max_hit_points;
+            unsigned int    energy_points;
+            unsigned int    max_energy_points;
+            unsigned int    level;
+            unsigned int    melee_attack_damage;
+            unsigned int    ranged_attack_damage;
+            unsigned int    armor_damage_reduction;
 };
 
 #endif

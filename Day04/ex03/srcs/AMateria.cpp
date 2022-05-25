@@ -18,6 +18,13 @@ AMateria::AMateria(std::string const &set_type) : type(set_type), _xp(0) {
     return ;
 }
 
+AMateria::AMateria(AMateria const &src) {
+
+    (std::string)this->type = src.getType();
+    this->_xp = src.getXP();
+    return ;
+}
+
 AMateria::~AMateria(void) {
 
     // std::cout << "AMateria destructor called" << std::endl;

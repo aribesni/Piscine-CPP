@@ -22,6 +22,15 @@ Form::Form(std::string name, int to_sign, int to_exec) : _name(name), _to_sign(t
     return ;
 }
 
+Form::Form(Form const &src) {
+
+    (std::string)this->_name = src.getName();
+    this->_to_sign = src.getToSign();
+    this->_to_exec = src.getToExec();
+    this->_signed = src.getSigned();
+    return ;
+}
+
 Form::~Form(void) {
 
     // std::cout << "Form destructor called" << std::endl;
@@ -64,6 +73,15 @@ void    Form::execute(Bureaucrat const &executor) const {
     if (executor.getGrade() > this->getToExec())
         throw Form::GradeTooLowException();
     return ;
+}
+
+Form&   Form::operator=(Form const &rhs) {
+
+    (std::string)this->_name = rhs.getName();
+    this->_to_sign = rhs.getToSign();
+    this->_to_exec = rhs.getToExec();
+    this->_signed = rhs.getSigned();
+    return (*this);
 }
 
 std::ostream    &operator<<(std::ostream &o, Form const &f) {

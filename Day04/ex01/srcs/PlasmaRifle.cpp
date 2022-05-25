@@ -18,6 +18,11 @@ PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {
     return ;
 }
 
+PlasmaRifle::PlasmaRifle(PlasmaRifle const &src) : AWeapon(src) {
+    
+    return ;
+}
+
 PlasmaRifle::~PlasmaRifle(void) {
 
     // std::cout << "Plasma Rifle destructor called" << std::endl;
@@ -28,4 +33,12 @@ void    PlasmaRifle::attack(void) const {
 
     std::cout << "* piouuu piouuu piouuu *" << std::endl;
     return ;
+}
+
+PlasmaRifle&    PlasmaRifle::operator=(PlasmaRifle const &rhs) {
+
+    this->_name = rhs.getName();
+    this->_apcost = rhs.getAPCost();
+    this->_damage = rhs.getDamage();
+    return (*this);
 }

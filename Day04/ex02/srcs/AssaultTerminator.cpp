@@ -18,6 +18,13 @@ AssaultTerminator::AssaultTerminator(void) {
     return ;
 }
 
+AssaultTerminator::AssaultTerminator(AssaultTerminator const &src) {
+
+    (void)src;
+    std::cout << "* teleports from space *" << std::endl;
+    return ;
+}
+
 AssaultTerminator::~AssaultTerminator(void) {
 
     std::cout << "I'll be back..." << std::endl;
@@ -45,4 +52,10 @@ void    AssaultTerminator::meleeAttack(void) const {
 
     std::cout << "* attacks with chainfists *" << std::endl;
     return ;
+}
+
+AssaultTerminator&  AssaultTerminator::operator=(AssaultTerminator const &rhs) {
+
+    (void)rhs;
+    return (*this);
 }

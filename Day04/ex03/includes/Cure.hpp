@@ -21,6 +21,7 @@ class   Cure : public AMateria {
     public :
 
         Cure(void);
+        Cure(Cure const &src);
         virtual ~Cure(void);
 
         virtual AMateria    *clone(void) const;

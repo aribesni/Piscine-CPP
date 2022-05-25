@@ -18,6 +18,12 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name, 100, 100, 100, 100, 
     return ;
 }
 
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src) {
+
+    std::cout << "Copy constructor called" << std::endl;
+    return ;
+}
+
 FragTrap::~FragTrap(void) {
 
     std::cout << "FragTrap destructor called" << std::endl;
@@ -44,4 +50,10 @@ void    FragTrap::vaulthunter_dot_exe(std::string const &target) {
         std::cout << this->_hit_points << " hit points left" << std::endl;
     }
     return ;
+}
+
+FragTrap&   FragTrap::operator=(FragTrap const &rhs) {
+
+    (void)rhs;
+    return (*this);
 }

@@ -18,6 +18,14 @@ AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name),
     return ;
 }
 
+AWeapon::AWeapon(AWeapon const &src) {
+
+    this->_name = src.getName();
+    this->_apcost = src.getAPCost();
+    this->_damage = src.getDamage();
+    return ;
+}
+
 AWeapon::~AWeapon(void) {
 
     // std::cout << "AWeapon destructor called" << std::endl;
@@ -37,4 +45,12 @@ int AWeapon::getAPCost(void) const {
 int AWeapon::getDamage(void) const {
 
     return (this->_damage);
+}
+
+AWeapon&    AWeapon::operator=(AWeapon const &rhs) {
+
+    this->_name = rhs.getName();
+    this->_apcost = rhs.getAPCost();
+    this->_damage = rhs.getDamage();
+    return (*this);
 }

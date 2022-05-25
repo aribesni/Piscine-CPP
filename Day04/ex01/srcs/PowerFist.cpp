@@ -18,6 +18,11 @@ PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50) {
     return ;
 }
 
+PowerFist::PowerFist(PowerFist const &src) : AWeapon(src) {
+
+    return ;
+}
+
 PowerFist::~PowerFist(void) {
 
     // std::cout << "Power Fist destructor called" << std::endl;
@@ -28,4 +33,12 @@ void    PowerFist::attack(void) const {
 
     std::cout << "* pschhh... SBAM ! *" << std::endl;
     return ;
+}
+
+PowerFist&    PowerFist::operator=(PowerFist const &rhs) {
+
+    this->_name = rhs.getName();
+    this->_apcost = rhs.getAPCost();
+    this->_damage = rhs.getDamage();
+    return (*this);
 }

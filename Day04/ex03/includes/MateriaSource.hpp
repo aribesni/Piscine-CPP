@@ -20,7 +20,9 @@ class   MateriaSource : public IMateriaSource {
     public :
 
         MateriaSource(void);
+        MateriaSource(MateriaSource const &src);
         virtual ~MateriaSource(void);
+
         virtual void    learnMateria(AMateria *m);
         virtual AMateria    *createMateria(std::string const &type);
 

@@ -18,6 +18,12 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
     return ;
 }
 
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src) : Form(src.getName(), src.getToSign(), src.getToExec()) {
+
+    this->_target = src._target;
+    return ;
+}
+
 PresidentialPardonForm::~PresidentialPardonForm(void) {
 
     // std::cout << "PresidentialPardonForm destructor called" << std::endl;
@@ -29,4 +35,10 @@ void    PresidentialPardonForm::execute(Bureaucrat const &executor) const {
     Form::execute(executor);
     std::cout << this->_target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
     return ;
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) {
+
+    this->_target = rhs._target;
+    return (*this);
 }

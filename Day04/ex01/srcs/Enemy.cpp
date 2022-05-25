@@ -18,6 +18,13 @@ Enemy::Enemy(int hp, std::string const &type) : _hp(hp), _type(type) {
     return ;
 }
 
+Enemy::Enemy(Enemy const &src) {
+
+    this->_hp = src.getHP();
+    this->_type = src.getType();
+    return ;
+}
+
 Enemy::~Enemy(void) {
 
     // std::cout << "Enemy destructor called" << std::endl;
@@ -42,4 +49,11 @@ void    Enemy::takeDamage(int i) {
         this->_hp -= i;
         // std::cout << "HP left : " << this->_hp << std::endl;
     }
+}
+
+Enemy&  Enemy::operator=(Enemy const &rhs) {
+
+    this->_hp = rhs.getHP();
+    this->_type = rhs.getType();
+    return (*this);
 }

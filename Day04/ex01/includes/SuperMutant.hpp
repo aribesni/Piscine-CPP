@@ -21,9 +21,12 @@ class   SuperMutant : public Enemy {
     public :
 
         SuperMutant(void);
+        SuperMutant(SuperMutant const &src);
         ~SuperMutant(void);
 
         // virtual void takeDamage(int i);
+
+        SuperMutant &operator=(SuperMutant const &rhs);
 };
 
 #endif

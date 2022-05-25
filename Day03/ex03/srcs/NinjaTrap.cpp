@@ -18,6 +18,12 @@ NinjaTrap::NinjaTrap(const std::string name) : ClapTrap(name, 60, 60, 120, 120, 
     return ;
 }
 
+NinjaTrap::NinjaTrap(NinjaTrap const &src) : ClapTrap(src) {
+
+    std::cout << "Copy constructor called" << std::endl;
+    return ;
+}
+
 NinjaTrap::~NinjaTrap(void) {
 
     std::cout << "NinjaTrap destructor called" << std::endl;
@@ -30,7 +36,7 @@ void    NinjaTrap::ninjaShoebox(FragTrap &trap) {
     return ;
 }
 
-void    NinjaTrap::ninjaShoebox(ScavTrap &trap) {
+void    NinjaTrap::ninjaShoebox(NinjaTrap &trap) {
 
     std::cout << trap.getName() << std::endl;
     return ;
@@ -40,4 +46,10 @@ void    NinjaTrap::ninjaShoebox(NinjaTrap &trap) {
 
     std::cout << trap.getName() << std::endl;
     return ;
+}
+
+NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &rhs) {
+
+    (void)rhs;
+    return (*this);
 }

@@ -18,6 +18,11 @@ Victim::Victim(std::string get_name) : name(get_name) {
     return ;
 }
 
+Victim::Victim(Victim const &src) {
+
+    this->name = src.getName();
+}
+
 Victim::~Victim(void) {
 
     std::cout << "The victim " << this->name << " died for no apparent reason !" << std::endl;
@@ -39,4 +44,10 @@ void    Victim::getPolymorphed(void) const {
 
     std::cout << this->name << " was just polymorphed in cute little sheep !" << std::endl;
     return ;
+}
+
+Victim&    Victim::operator=(Victim const &rhs) {
+
+    this->name = rhs.getName();
+    return (*this);
 }

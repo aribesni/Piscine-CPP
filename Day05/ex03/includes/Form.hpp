@@ -23,6 +23,7 @@ class   Form {
     public :
 
         Form(std::string name, int to_sign, int to_exec);
+        Form(Form const &src);
         ~Form(void);
 
         std::string     getName(void) const;
@@ -49,6 +50,8 @@ class   Form {
             public :
                 virtual const char *what() const throw() { return ("Form not signed"); };
         };
+        
+        Form    &operator=(Form const &rhs);
 
     private :
 

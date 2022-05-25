@@ -21,6 +21,7 @@ class   Ice : public AMateria {
     public :
 
         Ice(void);
+        Ice(Ice const &src);
         virtual ~Ice(void);
 
         virtual AMateria    *clone(void) const;
